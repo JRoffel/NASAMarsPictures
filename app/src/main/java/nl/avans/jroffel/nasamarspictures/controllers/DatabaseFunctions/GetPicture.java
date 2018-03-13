@@ -3,6 +3,7 @@ package nl.avans.jroffel.nasamarspictures.controllers.DatabaseFunctions;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import nl.avans.jroffel.nasamarspictures.controllers.DatabaseController;
 import nl.avans.jroffel.nasamarspictures.models.AsyncResponse;
@@ -37,9 +38,13 @@ public class GetPicture extends AsyncTask<Integer, Void, PhotoModel> {
 
         if(cursor != null) {
             cursor.moveToFirst();
+        } else {
+            return null;
         }
 
         PhotoModel picture = new PhotoModel(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2));
+
+        Log.w("dbrecords", picture.toString());
 
         return picture;
     }

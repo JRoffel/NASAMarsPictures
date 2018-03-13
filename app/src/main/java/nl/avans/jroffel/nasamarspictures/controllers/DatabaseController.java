@@ -15,8 +15,8 @@ import nl.avans.jroffel.nasamarspictures.models.PhotoModel;
 
 public class DatabaseController extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 2;
-    private static final String DATABASE_NAME = "NasaMarsPictures";
+    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME = "MarsPicturesDB";
 
     public static final String TABLE_PICTURES = "pictures";
 
@@ -31,7 +31,7 @@ public class DatabaseController extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String createTableSQL = "CREATE TABLE IF NOT EXISTS " + TABLE_PICTURES + "("
-                + KEY_ID + " INTEGER PRIMARY KEY, " + KEY_IMG + "TEXT, "
+                + KEY_ID + " INTEGER PRIMARY KEY, " + KEY_IMG + " TEXT, "
                 + KEY_CAMERA + " TEXT)";
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_PICTURES);
         sqLiteDatabase.execSQL(createTableSQL);

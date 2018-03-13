@@ -27,4 +27,9 @@ public class PhotoModel {
     public String getCamera_full_name() {
         return camera_full_name;
     }
+
+    @Override
+    public String toString() {
+        return "{ " + getId() + " - " + getCamera_full_name() + " @ " + getImg_src() + " }";
+    }
 }
