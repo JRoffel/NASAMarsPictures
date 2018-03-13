@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    tools:context="nl.avans.jroffel.nasamarspictures.MainActivity">
+    tools:context="nl.avans.jroffel.nasamarspictures.views.DetailActivity">
 
-    <LinearLayout
+
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/pictureOverview">
+        android:id="@+id/detailImage"
+        android:gravity="top"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"/>
 
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/pictureList" />
-
-    </LinearLayout>
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cameraText"
+        android:textSize="24sp" />
 </android.support.constraint.ConstraintLayout>
